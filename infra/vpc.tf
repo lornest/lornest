@@ -3,6 +3,11 @@ provider "google" {
   region  = var.gcp_region
 }
 
+resource "google_compute_address" "static_ip" {
+  name   = "lornest-static-ip"
+  region = var.gcp_region
+}
+
 # VPC
 resource "google_compute_network" "vpc" {
   name                    = "${var.gcp_project_id}-vpc"
