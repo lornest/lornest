@@ -10,7 +10,7 @@ variable "gke_password" {
 
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  name     = "${var.project_id}-gke"
+  name     = "${var.gcp_project_id}-gke"
   location = var.gcp_region
  
   network    = google_compute_network.vpc.name
